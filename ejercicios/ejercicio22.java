@@ -16,7 +16,7 @@ public class ejercicio22 {
             if (numero == -1) break;
             
             if (esPrimo(numero)) {
-                System.out.println(numero + " es un número primo.");
+                System.out.println(numero + " es un nú mero primo.");
             } else {
                 System.out.println(numero + " no es un número primo.");
             }

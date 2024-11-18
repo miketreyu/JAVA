@@ -55,13 +55,54 @@ public class b {
 				}
 				break;
 			case 2:
-				char alfabeto[]={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','Ñ','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
-				String contrasenan=sc.next().toUpperCase();
-				char c[]=contrasenan.toCharArray(); 
+				String alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+				String textoCodificado = "";
+				System.out.println("Introduce el texto a encriptar:");
+				String text = sc.nextLine();
+				System.out.println("Introduce la clave");
+				int desplazamiento = sc.nextInt();
+				text = text.toUpperCase();
+				char caracter;
+				
+				for(int i = 0; i < text.length(); i++)
+				{
+					caracter = text.charAt(i);
+					int pos = alfabeto.indexOf(caracter);
+					if(pos==-1)
+					{
+						
+					}
+				}
 				
 				;
 				break;
-			case 3: texto = "Miercoles";
+			case 3:// Generar contraseña segura
+				String contrasenha="";
+				System.out.println("Introduce la longitud de la contraseña (8-20)");
+				int longitud = sc.nextInt();
+				sc.nextLine();
+				if (longitud < 8 || longitud > 20)
+				{
+					System.out.println("Longitud incorrecta");
+					break;
+				}
+				String mayusMinus = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnoprstuvwxyz";
+				String numeros = "1234567890";
+				String especiales = "@#$%&!";
+				int letramayus = (int)Math.random()*mayusMinus.length();
+				int numero = (int)Math.random()*numeros.length();
+				int especial = (int)Math.random()*especiales.length();
+				contrasenha = ""+mayusMinus.charAt(letramayus)+numeros.charAt(numero)+especiales.charAt(especial);
+				contrasenha = contrasenha.toUpperCase(); 
+				String todos=mayusMinus+numeros+especiales;
+				for(int i = 3; i<todos.length();i++)
+				{
+					int pos =(int)(Math.random()*todos.length());
+					contrasenha += todos.charAt(pos);
+				}
+				System.out.println("Contraseña generada " + contrasenha);
+				System.out.println();
+				System.out.println();
 				break;
 			case 4: 
 				int[]intentosf= new int[]{2, 3, 6, 4, 3, 1, 3};
@@ -69,7 +110,7 @@ public class b {
 				int suma = 0;
 				int media = 0;
 				int contad = 0;
-				int cont7=0, cont8=0, cont9=0;
+				int normal=0, sospe=0, muysospe=0;
 				for (int i = 0; i < intentosf.length; i++) {
 		            suma += intentosf[i];
 		        }
@@ -80,18 +121,22 @@ public class b {
 		            }
 		        }
 				for (int k = 0; k < intentosf.length; k++) {
-		            if(intentosf[k]<=3) {
-		            	cont7++;
+		            int intento = intentosf[k];
+					if(intento<=3) {
+		            	normal++;
 		            }
+					else if(intento<5) {
+						sospe++;
+					}
+					else {
+						muysospe++;
+					}
 		        }
 				for (int l = 0; l < intentosf.length; l++) {
-		            if(intentosf[l]<=3&&intentosf[l]>=5) {
-		            	cont8++;
-		            }
+		           
 		        }
 				for (int m = 0; m < intentosf.length; m++) {
-		            if(intentosf[m]<6) {
-		            	cont9++;
+		       
 		            }
 		        }
 				System.out.println("Los nombres y numeros van seguidos en orden: ");
@@ -100,9 +145,9 @@ public class b {
 				System.out.println("El total de intentos fallidos es: "+suma );
 				System.out.println("La media es : " + media);
 				System.out.println("El total de personas que superan la media es: " + contad );
-				System.out.println("El total de personas que tienen 3 o menos intentos fallidos es: " + cont7);
-				System.out.println("El total de personas que tienen entre 3 y 5 intentos fallidos es: " + cont8);
-				System.out.println("El total de personas que tienen 6 o mmas intentos fallidos es: " + cont9);
+				System.out.println("El total de personas que tienen 3 o menos intentos fallidos es: " );
+				System.out.println("El total de personas que tienen entre 3 y 5 intentos fallidos es: " );
+				System.out.println("El total de personas que tienen 6 o mmas intentos fallidos es: " );
 				;
 				break;
 			case 5:;

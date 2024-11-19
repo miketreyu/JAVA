@@ -29,11 +29,11 @@ public class Array {
 		int array1[]=new int[100];
 		for(int p=20; p<array3.length;p++) {
 			array3[p]=array1
+			}
 		*/			
 					
 					
-		}
+		
 
-	}
-
+}
 }

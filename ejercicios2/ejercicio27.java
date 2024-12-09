@@ -26,6 +26,7 @@ public class ejercicio27 {
 		System.out.println("Escribe el mes: ");
 		int n = sc.nextInt();
 		boolean a = fechaCorrecta(m,n);
+		System.out.println(a);
 
 	}
 
